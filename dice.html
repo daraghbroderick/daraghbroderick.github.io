@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="dice.css" type="text/css">
+    <script type="text/javascript" src="dice.js" defer></script>
+  </head>
+  <body>
+    <h1>Dice Roller</h1>
+    <p id="simulatorDirections">Select the number of dice you wish to roll then click 'Roll'. After rolling you have the option to click and 'select' dice then you can Roll again but keep the selected dice.</p>
+    <div id="controller">
+      <select id="selectDice">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button onclick="rollAll()">Roll Dice</button>
+      <button onclick="reRollSelectedOnly()">Roll but Keep Selected Dice</button>
+    </div>
+    <div id="diceMat"></div>
+    <div id="Instructions">
+      <div id="liarsDice" onclick="toggleLiars()">
+        <h3>Liars Dice</h3>
+        <p id="liarsText">Each player needs 5 dice (or our JavaScript app!).
+            All players roll 2 dice and the player with the largest total will go first.
+            Each round all players must roll all 5 dice but don’t show the other players.
+            The first player begins bidding, they announce any face value (e.g 1-6) and the minimum number of dice that they believe are showing that value, from all players dice.<br><br>
+            Example bids: There are four twos (This means the player believes there are 4 dice showing the number 2 from every players dice.)
+            There are seven fives (This means the player believes there are 7 dice showing the number 5 from every players dice.)<br><br>
+            Turns then rotate among the players in a clockwise order.
+            Each player has 2 options (a) Increase the bid or (b) Challenge the bid.<br>
+            (a) You can increase the bid by bidding the same amount of dice with a higher face value or a higher amount of dice with any face value. Then it’s the next players turn.<br>
+            (b) You can challenge the bid by saying “Liar!” This means you don’t think the previous bid was correct. When a challenge is called, all players must show their dice. <br><br>
+            If the bid is correct (at least as many of the face value showing as were bid), the bidder wins. Otherwise the challenger wins. The loser, loses a die. The last player to retain a die(or dice) is the winner. The loser of the last round starts the next round, if they are eliminated then the person to their left starts the new round.
+        </p>
+      </div>
+      <div id="yahtzee" onclick="toggleYahtzee()">
+        <h3>Yahtzee</h3>
+        <p id="yahtzeeText">The object of Yahtzee is to obtain the highest score from throwing 5 dice. 
+          The game consists of 13 rounds. In each round, you roll the dice and then score the roll in one of 13 categories. 
+          You must score once in each category. The score is determined by a different rule for each category. 
+          The game ends once all 13 categories have been scored.<br><br>
+          To start with, roll all the dice. After rolling you can either score the current roll (see scoring), or re-roll any or all of the dice. 
+          Again you can either score or re-roll any or all of the dice one last time. 
+          After rolling 3 times you must choose a category to score. 
+          You may score the dice at any point in the round, i.e. it doesn't have to be after the 3rd roll.<br><br>
+          <a href="http://yahtzee-rules.com/" target="_blank">Scoring Rules and Scoring Card</a><br> 
+          You can print and write into the card or download and type into it.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
